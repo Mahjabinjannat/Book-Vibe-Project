@@ -1,5 +1,6 @@
 import React from "react";
 import BookCard from "../shared/BookCard";
+import { IBookType } from "@/types/BookType";
 
 const getProducts = async () => {
   const res = await fetch("http://localhost:5001/books/");
@@ -14,7 +15,7 @@ const Books = async () => {
         Books
       </h1>
       <div className="grid grid-cols-3 gap-4">
-        {books.map((book) => (
+        {books.map((book: IBookType) => (
           <BookCard key={book.id} book={book} />
         ))}
       </div>

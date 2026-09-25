@@ -26,7 +26,7 @@ const Navbar = () => {
           className={`text-[12px] font-semibold text-[#131313] opacity-[80%]`}
         >
           <Link
-            href="./listed-books"
+            href="/listed-books"
             className={`  ${pathName === "/listed-books" ? "text-[#23BE0A] border border-[#23BE0A] py-2 px-4 rounded-[6px]" : ""}`}
           >
             Listed Books
