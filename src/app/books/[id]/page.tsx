@@ -1,5 +1,5 @@
-import ReadList from "@/component/Buttons/ReadList";
-import WishList from "@/component/Buttons/WishList";
+import ReadList from "@/component/buttons/ReadList";
+import WishList from "@/component/buttons/WishList";
 
 import Image from "next/image";
 
