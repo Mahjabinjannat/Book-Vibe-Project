@@ -10,10 +10,17 @@ const BookDetailsPage = async ({
 }) => {
   const { id } = await params;
 
-  const res = await fetch(`http://localhost:5001/books/${id}`);
+  const res = await fetch(`http://localhost:3000/api/books/${id}`);
 
   if (!res.ok) {
-    throw new Error("Failed to fetch book details");
+    // throw new Error("Failed to fetch book details");
+    return (
+      <main className="container mx-auto px-4 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <h1>Book Not Found</h1>
+        </div>
+      </main>
+    );
   }
 
   const book = await res.json();

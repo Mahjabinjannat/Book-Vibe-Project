@@ -35,7 +35,7 @@ export default function ListedBookspage() {
         <div className="tab-content bg-base-100 border-base-300 p-6">
           {readList.length ? (
             readList.map((book) => (
-              <div key={book.id}>
+              <div key={book.bookId}>
                 <Image
                   src={book.image}
                   alt={book.bookName}
@@ -58,7 +58,7 @@ export default function ListedBookspage() {
         <div className="tab-content bg-base-100 border-base-300 p-6">
           {wishList.length ? (
             wishList.map((book) => (
-              <div key={book.id}>
+              <div key={book.bookId}>
                 <Image
                   src={book.image}
                   alt={book.bookName}

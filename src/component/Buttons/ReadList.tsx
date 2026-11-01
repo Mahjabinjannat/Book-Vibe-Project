@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 const ReadList = ({ book }: { book: IBookType }) => {
   const { readList, setReadList } = use(BooksContext);
   const handleReadList = () => {
-    const alreadyExists = readList.some((item) => book.id === item.id);
+    const alreadyExists = readList.some((item) => book.bookId === item.bookId);
     if (!alreadyExists) {
       setReadList([...readList, book]);
       toast.success("Added To ReadList");

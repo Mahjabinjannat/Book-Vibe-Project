@@ -1,22 +1,54 @@
-import React from "react";
+// import React from "react";
+// import BookCard from "../shared/BookCard";
+// import { IBookType } from "@/types/BookType";
+
+// const getProducts = async () => {
+//   const res = await fetch("http://localhost:5001/books/");
+//   return res.json();
+// };
+
+// const Books = async () => {
+//   const books = await getProducts();
+//   return (
+//     <div className="container mx-auto mt-20">
+//       <h1 className="text-[#131313] font-bold text-[35px] text-center">
+//         Books
+//       </h1>
+//       <div className="grid grid-cols-3 gap-4">
+//         {books.map((book: IBookType) => (
+//           <BookCard key={book.id} book={book} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Books;
+
 import BookCard from "../shared/BookCard";
 import { IBookType } from "@/types/BookType";
 
-const getProducts = async () => {
-  const res = await fetch("http://localhost:5001/books/");
-  return res.json();
+const getBooks = async (): Promise<IBookType[]> => {
+  const res = await fetch("http://localhost:3000/api/books");
+  const responseBody = res.json();
+  if (!res.ok) {
+    throw new Error(`Failed to fetch books: ${res.status}`);
+  }
+
+  return responseBody;
 };
 
 const Books = async () => {
-  const books = await getProducts();
+  const books = await getBooks();
   return (
     <div className="container mx-auto mt-20">
       <h1 className="text-[#131313] font-bold text-[35px] text-center">
         Books
       </h1>
+
       <div className="grid grid-cols-3 gap-4">
-        {books.map((book: IBookType) => (
-          <BookCard key={book.id} book={book} />
+        {books.map((book) => (
+          <BookCard key={book.bookId} book={book} />
         ))}
       </div>
     </div>

@@ -1,5 +1,6 @@
 export interface IBookType {
   id: string;
+  bookId: string;
   bookName: string;
   author: string;
   image: string;

@@ -24,7 +24,7 @@ const BookCard = ({ book }: { book: IBookType }) => {
         <hr className="text-[#131313]/15 border-dashed" />
         <p>{book.tags[0]}</p>
         <p>{book.rating}</p>
-        <Link href={`/books/${book.id}`}>
+        <Link href={`/books/${book.bookId}`}>
           <button className="bg-[#131313]/15 py-2 px-4 rounded-[7px] text-gray-700 cursor-pointer">
             View Details
           </button>
