@@ -25,21 +25,34 @@
 
 // export default Books;
 
+"use client";
+
+import { useEffect, useState } from "react";
 import BookCard from "../shared/BookCard";
 import { IBookType } from "@/types/BookType";
 
-const getBooks = async (): Promise<IBookType[]> => {
-  const res = await fetch("http://localhost:3000/api/books");
-  const responseBody = res.json();
-  if (!res.ok) {
-    throw new Error(`Failed to fetch books: ${res.status}`);
-  }
+const Books = () => {
+  const [books, setBooks] = useState<IBookType[]>([]);
 
-  return responseBody;
-};
+  useEffect(() => {
+    const getBooks = async () => {
+      try {
+        const res = await fetch("/api/books");
 
-const Books = async () => {
-  const books = await getBooks();
+        if (!res.ok) {
+          throw new Error(`Failed to fetch books: ${res.status}`);
+        }
+
+        const data: IBookType[] = await res.json();
+        setBooks(data);
+      } catch (error) {
+        console.error("Failed to fetch books:", error);
+      }
+    };
+
+    getBooks();
+  }, []);
+
   return (
     <div className="container mx-auto mt-20">
       <h1 className="text-[#131313] font-bold text-[35px] text-center">
