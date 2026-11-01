@@ -8,7 +8,7 @@ Book Vibe allows users to explore books, view detailed information about individ
 
 ## ✨ Live Preview
 
-🔗 **Live Website:** Coming Soon
+🔗 **Live Website:** https://book-vibe-project-gamma.vercel.app/
 
 🔗 **GitHub Repository:**  
 https://github.com/Mahjabinjannat/Book-Vibe-Project
@@ -101,7 +101,7 @@ book-vibe-project/
 │   │   │   └── [id]/
 │   │   │       ├── page.tsx
 │   │   │       └── BookActions.tsx
-│ 
+│
 │   │   ├── listed-books/
 │   │   │   └── page.tsx
 │   │   │
